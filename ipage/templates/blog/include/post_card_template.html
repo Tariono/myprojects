@@ -1,0 +1,22 @@
+
+
+
+
+<div class="card">
+  <div class="card-header">
+    <p>{{post.date_pub}}</p>
+  </div>
+    <div class="card-body">
+      <div class="row">
+      <a href="{{post.get_absolute_url}}">{% if post.image %}<img src="{{post.image.url}}" class="card-img-top" alt="..." style="margin-left:10px;width:200px;height:200px;" >{% endif %}</a>
+      <div class="" style="margin:10px;">
+        <h5 class="card-title">{{post.title}}</h5>
+        <p class="card-text">{{post.body|truncatewords:12}}</p>
+
+      </div>
+
+  </div>
+
+  </div>
+  <a href="{{post.get_absolute_url}}" class="btn btn-primary">Подробнее</a>
+</div>

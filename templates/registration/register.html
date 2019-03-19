@@ -1,0 +1,17 @@
+{% extends 'baseblog.html' %}
+
+{% block title %}
+Sign up - {{block.super}}
+{% endblock %}
+
+{% block content %}
+
+<form class="" action="" method="post">
+  {% csrf_token %}
+  {{form.as_p}}
+
+  <button type="submit" name="button">Sign up</button>
+
+</form>
+
+{% endblock %}

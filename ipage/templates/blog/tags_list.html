@@ -1,0 +1,30 @@
+{% extends 'baseblog.html' %}
+
+{% block title %}
+  Список тегов - {{block.super}}
+
+  {% endblock %}
+
+{% block content %}
+  <h1 class="mb-5">Теги:</h1>
+  {% for tag in tags %}
+  <h3><a href="{{tag.get_absolute_url}}">{{tag.title}}</a></h3>
+  {% endfor %}
+
+        <nav aria-label="...">
+  <ul class="pagination">
+
+    {% for n in tags.paginator.page_range %}
+    {% if tags.number == n  %}
+    <li class="page-item active" aria-current="page">
+      <a class="page-link" href="?page={{n}}">{{n}}<span class="sr-only">(current)</span></a>
+    </li>
+    {% else %}
+      <li class="page-item">
+        <a class="page-link" href="?page={{n}}">{{n}}</a>
+      </li>
+    {% endif %}
+    {% endfor %}
+  </ul>
+  </nav>
+{% endblock %}

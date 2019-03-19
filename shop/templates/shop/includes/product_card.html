@@ -1,0 +1,12 @@
+
+<div class="card" style="width: 200px; height: 400px;  border:1px solid grey;">
+  <a href="{{product.get_absolute_url}}">
+    {% if product.image %}
+    <img src="{{product.image.url}}" class="card-img-top" alt="..." height="200px" width="360px">
+    {% endif %}
+  </a>
+  <div class="card-body">
+    <h5 class="card-title">{{product.title|truncatewords:9}}</h5>
+    <p>{{product.price}} руб.</p>
+    </div>
+  </div>
